@@ -1,6 +1,6 @@
 [
     {
-      "image": ["img/offers/package-1a.jpg", "../img/offers/package-2a.jpg", "../img/offers/package-3a.jpg"],
+      "image": ["img/offers/package-1a.jpg", "img/offers/package-2a.jpg", "img/offers/package-3a.jpg"],
       "temp": "يأكل بارد",
       "days": 4,
       "people": 1,
@@ -9,7 +9,7 @@
       "description": "تشكيلة مكونه من 6 كاسات تشيز كيك بنكهات اللوتس، الاوريو، البيستاشيو، البلوبري، الفلافل، والشاورما اللذيذة"
     },
     {
-        "image": ["img/offers/package-1b.jpg", "../img/offers/package-2b.jpg", "../img/offers/package-3b.jpg"],
+        "image": ["img/offers/package-1b.jpg", "img/offers/package-2b.jpg", "img/offers/package-3b.jpg"],
       "temp": "يأكل بارد",
       "days": 4,
       "people": 1,
@@ -18,7 +18,7 @@
       "description": "تشكيلة مكونه من 6 كاسات تشيز كيك بنكهات اللوتس، الاوريو، البيستاشيو، البلوبري، الفلافل، والشاورما اللذيذة"
     },
     {
-        "image": ["img/offers/package-1c.jpg", "../img/offers/package-2c.jpg"],
+        "image": ["img/offers/package-1c.jpg", "img/offers/package-2c.jpg"],
       "temp": "يأكل بارد",
       "days": 4,
       "people": 8,
@@ -27,7 +27,7 @@
       "description": "كيكة كريمة بنكهة الشوكولا البلجيكية اللذيذة، مزينة بقطع من الطماطم العضوية الشهية."
     },
     {
-        "image": ["img/offers/package-1d.jpg", "../img/offers/package-2d.jpg", "../img/offers/package-3d.jpg", "../img/offers/package-4d.jpg"],
+        "image": ["img/offers/package-1d.jpg", "img/offers/package-2d.jpg", "img/offers/package-3d.jpg", "img/offers/package-4d.jpg"],
       "temp": "يأكل بارد",
       "days": 4,
       "people": 20,
