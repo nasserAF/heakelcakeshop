@@ -1,0 +1,38 @@
+[
+    {
+      "image": ["../img/offers/package-1a.jpg", "../img/offers/package-2a.jpg", "../img/offers/package-3a.jpg"],
+      "temp": "يأكل بارد",
+      "days": 4,
+      "people": 1,
+      "price": 12.00,
+      "rating": 5,
+      "description": "تشكيلة مكونه من 6 كاسات تشيز كيك بنكهات اللوتس، الاوريو، البيستاشيو، البلوبري، الفلافل، والشاورما اللذيذة"
+    },
+    {
+        "image": ["../img/offers/package-1b.jpg", "../img/offers/package-2b.jpg", "../img/offers/package-3b.jpg"],
+      "temp": "يأكل بارد",
+      "days": 4,
+      "people": 1,
+      "price": 12.00,
+      "rating": 5,
+      "description": "تشكيلة مكونه من 6 كاسات تشيز كيك بنكهات اللوتس، الاوريو، البيستاشيو، البلوبري، الفلافل، والشاورما اللذيذة"
+    },
+    {
+        "image": ["../img/offers/package-1c.jpg", "../img/offers/package-2c.jpg"],
+      "temp": "يأكل بارد",
+      "days": 4,
+      "people": 8,
+      "price": 18.00,
+      "rating": 5,
+      "description": "كيكة كريمة بنكهة الشوكولا البلجيكية اللذيذة، مزينة بقطع من الطماطم العضوية الشهية."
+    },
+    {
+        "image": ["../img/offers/package-1d.jpg", "../img/offers/package-2d.jpg", "../img/offers/package-3d.jpg", "../img/offers/package-4d.jpg"],
+      "temp": "يأكل بارد",
+      "days": 4,
+      "people": 20,
+      "price": 35.00,
+      "rating": 5,
+      "description": "في يك الكيك ستجدون اشى والذ الحلويات المصنوعة بأجود المكونات، كما ستستمتعون بالجسات"
+    }
+  ]

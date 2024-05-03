@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tourist - Travel Agency HTML Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../generalStyles.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navigation Bar Section -->
+    <div id="injected-navbar"></div>
+
+    <!-- Booking Start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="login-booking p-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-md-12 text-white">
+                    </div>
+                    <div class="col-md-12" style="direction: rtl;">
+                        <h1 class="login-text-white mb-4">تسجيل الدخول</h1>
+                        <form id="offer-form">
+
+                        </form>
+                        <div class="mt-3">
+                            <button id="next-btn" class="btn btn-outline-light">التالي</button>
+                            <span id="record-count" style="margin-right: 20px;margin-left: 20px;color: rgb(58, 3, 58);font-weight: bold;"></span> 
+                            <button id="previous-btn" class="btn btn-outline-light">السابق</button>
+                            <button id="save-btn" class="btn btn-outline-light">حفظ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Booking Start -->
+
+
+    <!-- Footer Section -->
+    <div id="injected-footer">
+
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- inject navbar -->
+    <script>
+        const navbarDiv = document.getElementById('injected-navbar');
+        const footerDiv = document.getElementById('injected-footer');
+        fetch('../navbar.html')
+            .then(response => response.text())
+            .then(html => {
+                navbarDiv.innerHTML = html;
+
+                // Load style2.css dynamically 
+                /* const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = 'style2.css';
+                document.head.appendChild(link);  */
+            })
+            .catch(error => console.error('Error fetching content:', error));
+
+        fetch('../footer.html')
+            .then(response => response.text())
+            .then(html => {
+                footerDiv.innerHTML = html;
+
+                // Load style2.css dynamically 
+                /* const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = 'style2.css';
+                document.head.appendChild(link);  */
+            })
+            .catch(error => console.error('Error fetching content:', error));
+    </script>
+
+<!-- Generate Categories Form -->
+    <script>
+        let currentOfferIndex = 0;
+        let offersData = [];
+
+        function loadOffer(index) {
+            const offer = offersData[index];
+            const offerForm = document.getElementById('offer-form');
+            offerForm.innerHTML = `
+        <div class="col-md-12">
+            <label for="temp" class="form-text-white"><b>حالة الأكل</b></label>
+            <div class="form-floating">
+                <input type="text" class="form-control login-bg-transparent" id="temp" value="${offer.temp}">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <label for="days" class="form-text-white"><b>الصلاحية</b></label>
+            <div class="form-floating">
+                <input type="number" class="form-control login-bg-transparent" id="days" value="${offer.days}">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <label for="people" class="form-text-white"><b>عدد الأشخاص</b></label>
+            <div class="form-floating">
+                <input type="number" class="form-control login-bg-transparent" id="people" value="${offer.people}">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <label for="price" class="form-text-white"><b>السعر</b></label>
+            <div class="form-floating">
+                <input type="number" class="form-control login-bg-transparent" id="price" value="${offer.price}">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <label for="rating" class="form-text-white"><b>التقييم (1-5)</b></label>
+            <div class="form-floating">
+                <input type="number" class="form-control login-bg-transparent" id="rating" value="${offer.rating}" min="1"
+                    max="5">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <label for="description" class="form-text-white"><b>الوصف</b></label>
+            <div class="form-floating">
+                <textarea class="form-control login-bg-transparent" id="description">${offer.description}</textarea>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <label for="image" class="form-text-white"><b>الصور (comma-separated)</b></label>
+            <div class="form-floating">
+                <input type="text" class="form-control login-bg-transparent" id="image" value="${offer.image.join(', ')}">
+            </div>
+        </div>
+      `;
+
+
+      // Update record count
+    const recordCountElement = document.getElementById('record-count');
+    recordCountElement.textContent = `${index + 1}  /  ${offersData.length}`;
+        }
+
+        function saveOffer() {
+            const offerForm = document.getElementById('offer-form');
+            const updatedOffer = {
+                image: offerForm.querySelector('#image').value.split(',').map(s => s.trim()),
+                temp: offerForm.querySelector('#temp').value,
+                days: parseInt(offerForm.querySelector('#days').value),
+                people: parseInt(offerForm.querySelector('#people').value),
+                price: parseFloat(offerForm.querySelector('#price').value),
+                rating: parseInt(offerForm.querySelector('#rating').value),
+                description: offerForm.querySelector('#description').value
+            };
+            offersData[currentOfferIndex] = updatedOffer;
+
+            // Send updated data to the backend
+            fetch('http://127.0.0.1:5500/update-offers', { // Replace with your actual backend route
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(offersData)
+            })
+                .then(response => response.text())
+                .then(message => {
+                    console.log(message);
+                    alert('Changes saved successfully!');
+                })
+                .catch(error => {
+                    console.error(error);
+                    alert('Error saving changes!');
+                });
+        }
+
+        // Fetch initial offer data
+        fetch('../offers.json')
+            .then(response => response.json())
+            .then(offers => {
+                offersData = offers;
+                loadOffer(currentOfferIndex);
+            });
+
+        // Event listeners for navigation buttons
+        document.getElementById('previous-btn').addEventListener('click', () => {
+            currentOfferIndex = (currentOfferIndex - 1 + offersData.length) % offersData.length;
+            loadOffer(currentOfferIndex);
+        });
+
+        document.getElementById('next-btn').addEventListener('click', () => {
+            currentOfferIndex = (currentOfferIndex + 1) % offersData.length;
+            loadOffer(currentOfferIndex);
+        });
+
+        // Event listener for save button
+        document.getElementById('save-btn').addEventListener('click', () => {
+            if (confirm('Are you sure you want to save the changes?')) {
+                saveOffer();
+            }
+        });
+    </script>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+
+
+
+    <!-- Footer Gallery script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      fetch('../socialGallery.json')
+      .then(response => response.json())
+      .then(imagesData => {
+        const galleryContainer = document.getElementById('social-gallery');
+        console.log("galleryContainer :",galleryContainer); // Check if the script is running
+    
+        for (const key in imagesData) {
+          const imageGroup = imagesData[key];
+          const randomImageIndex = Math.floor(Math.random() * imageGroup.length);
+          const randomImageURL = imageGroup[randomImageIndex];
+    
+          console.log("Random Image URL:", randomImageURL); // Verify image URL
+    
+          const imageElement = document.createElement('div');
+          imageElement.classList.add('col-3');
+          imageElement.innerHTML = `<img src="${randomImageURL}" class="img-fluid rounded-circle border general-white-color p-2" alt="" width="135px">`;
+          galleryContainer.appendChild(imageElement);
+        }
+      })
+      .catch(error => console.error('Error fetching JSON:', error));
+    });
+        
+    </script>
+
+</body>
+
+</html>

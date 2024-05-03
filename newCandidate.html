@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>هيك الكيك - اضافة عرض </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+    <!-- Favicon -->
+
+
+    <!-- Google Web Fonts -->
+
+
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../generalStyles.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../newCandidate.css">
+    <link rel="stylesheet" href="../generalForm.css">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navigation Bar Section -->
+    <div id="injected-navbar"></div>
+
+
+    <!-- Booking Start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="login-booking p-5">
+                <div class="row  align-items-center">
+                    <div class="col-md-12 text-white">
+                        <!-- <h6 class="text-white text-uppercase">Booking</h6>
+                        <h1 class="text-white mb-4">Online Booking</h1>
+                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                        <a class="btn btn-outline-light py-3 px-5 mt-2" href="">Read More</a> -->
+                    </div>
+                    <div class="col-md-12">
+
+                        
+
+
+
+
+
+
+
+
+
+                        <!-- About Start -->
+<div class="container-fluid about bg-light py-5">
+    <div class="container py-5" style="direction: rtl;">
+        
+            
+           
+                <!-- <h6 class="section-title bg-white text-start text-primary pe-3">هيك الكيك</h6> -->
+                <h1 class="mb-4">مطلوب موظفة ... <span class="text-primary"> المسؤوليات والمهام </span></h1>
+                <p class="mb-4 login-color lcl-btn-primary-p general-text-align-justify" style="text-align: justify;"><strong>المبيعات : </strong> الترحيب بالعملاء بحرارة، مساعدتهم في اختيار الكيك، والرد على استفساراتهم حول المنتجات والأسعار.<br>
+                    <strong>التصوير : </strong> التقاط صور احترافية لطلبات العملاء المخصصة، مع التركيز على إبراز جمال وتفاصيل الكيك.<br>
+                    <strong>خدمة العملاء : </strong> تقديم الطلبات للعملاء بابتسامة، ضمان رضاهم عن الخدمة والمنتجات.<br>
+                    <strong>نظافة المحل : </strong> الحفاظ على نظافة المحل ومنطقة تناول الطعام بشكل مستمر، بما في ذلك تنظيف الطاولات والأسطح والأرضيات.<br>
+                    <strong>المهام الأخرى : </strong> المساعدة في مهام أخرى حسب الحاجة، مثل ترتيب المنتجات وتجهيز المشروبات.<br></p>
+                <h1 class="mb-4"> المؤهلات <span class="text-primary"> المطلوبة </span></h1>
+                <p class="mb-4 login-color lcl-btn-primary-p general-text-align-justify" style="text-align: justify;"><strong>العمر : </strong> لا يتجاوز 30 عامًا.<br>
+                    <strong>مكان الإقامة : </strong> يفضل القرب من منطقة دوار الجامعة.<br>
+                    <strong>الحالة الاجتماعية : </strong> عزباء.<br>
+                    <strong>نوع الدوام : </strong> دوام كامل.<br>
+                    <strong>الشخصية : </strong> تتمتع بمهارات اتصال فعالة، لباقة في الحديث، وحضور أنيق. القدرة على بناء علاقات إيجابية مع العملاء والتفاعل معهم بمهنية واحترام.<br>
+                    <strong>المهارات : </strong> إجادة مهارات التصوير الفوتوغرافي.</p>
+                <br><br>
+                
+                <form id="userForm"  >
+                    <label>البيانات الشخصية</label>
+                    <div class="sub-container" id="personalInfo">
+                      <!-- <label for="nameInput">الاسم:</label> -->
+                      <input type="text" id="nameInput" placeholder="الاسم رباعي" required>
+                      <!-- <label for="ageInput">العمر:</label> -->
+            
+                      <input type="text" id="ageInput" placeholder="تاريخ الميلاد مثلا 22/10/2004" required>
+            
+                      <input type="text" id="mobileInput" placeholder="رقم الجوال مثال 0791234567" required>
+            
+                      <input type="text" id="emailInput" placeholder="البريد الالكتروني  مثال acb@gmail.com" required style="direction: ltr;">
+
+                      <input type="text" id="materialStatusInput" placeholder="الحالة الاجتماعية مثال متزوجه او عزباء" required>
+
+                      <input type="text" id="addressInput" placeholder="العنوان مثال اربد الحي الشرق قرب مخابز نبيل" required>
+                    </div>
+            
+            
+                    <br>
+                    <label>المؤهلات:</label>
+                    <div class="sub-container" id="qualifications-container">
+                      <div class="qualification-entry">
+                        <div class="input-group">
+                          <!-- <label for="qualification">المؤهل</label> -->
+                          <input type="text" class="qualification" placeholder="المؤهل" required>
+                        </div>
+                        <div class="input-group">
+                          <!-- <label for="qualificationYear">سنة التخرج</label> -->
+                          <input type="text" class="qualificationYear" placeholder="سنة الحصول على المؤهل مثال 2009" required>
+                        </div>
+                      </div>
+                    </div>
+                    <button type="button" id="addQualificationButton" style="display:none;">إضافة مؤهل</button>
+            
+                    <br>
+                    <label>الخبرات:</label>
+                    <div class="sub-container" id="experiences-container">
+                      <div class="experience-entry">
+                        <div class="input-group">
+                          <!-- <label for="nationality">جهة العمل</label> -->
+                          <input type="text" class="experience" placeholder="جهة العمل" required>
+                        </div>
+                        <div class="input-group">
+                          <!-- <label for="passport">المده</label> -->
+                          <input type="text" class="passport" placeholder="عدد سنوات او شهور الخبرة مثال 4 سنوات او 3 شهور"
+                            required>
+                        </div>
+                      </div>
+                    </div>
+                    <button type="button" id="addExperienceButton" style="display:none;">إضافة خبرة</button>
+                    <br>
+                    <input type="submit" value="حفظ البيانات">
+                  </form>
+                
+            
+      
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Booking Start -->
+
+
+
+
+
+    <script>
+        const navbarDiv = document.getElementById('injected-navbar');
+        const footerDiv = document.getElementById('injected-footer');
+        fetch('../navbar.html')
+            .then(response => response.text())
+            .then(html => {
+                navbarDiv.innerHTML = html;
+            })
+            .catch(error => console.error('Error fetching content:', error));
+
+        fetch('../footer.html')
+            .then(response => response.text())
+            .then(html => {
+                footerDiv.innerHTML = html;
+            })
+            .catch(error => console.error('Error fetching content:', error));
+    </script>
+
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+
+    <!-- Footer Gallery script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      fetch('../socialGallery.json')
+      .then(response => response.json())
+      .then(imagesData => {
+        const galleryContainer = document.getElementById('social-gallery');
+        console.log("galleryContainer :",galleryContainer); // Check if the script is running
+    
+        for (const key in imagesData) {
+          const imageGroup = imagesData[key];
+          const randomImageIndex = Math.floor(Math.random() * imageGroup.length);
+          const randomImageURL = imageGroup[randomImageIndex];
+    
+          console.log("Random Image URL:", randomImageURL); // Verify image URL
+    
+          const imageElement = document.createElement('div');
+          imageElement.classList.add('col-3');
+          imageElement.innerHTML = `<img src="${randomImageURL}" class="img-fluid rounded-circle border general-white-color p-2" alt="" width="135px">`;
+          galleryContainer.appendChild(imageElement);
+        }
+      })
+      .catch(error => console.error('Error fetching JSON:', error));
+    });
+        
+    </script>
+
+<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-database.js"></script>
+<script src="newCandidate.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

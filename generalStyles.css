@@ -1,0 +1,119 @@
+@font-face {
+    font-family: "jazeera-light"; /* Name your font */
+    src: /* url("../fonts/jazeera-light.woff2") format("woff2"), */
+         /* url("../fonts/jazeera-light.woff") format("woff"), */
+         url("../fonts/jazeera-light.ttf") format("truetype");
+    font-weight: normal; /* Adjust weight as needed */
+    font-style: normal;  /* Adjust style as needed */
+  }
+
+  body{
+    font-family: "jazeera-light", Arial, sans-serif;
+}
+
+.my-colors{
+    --primary-100:#E05297;
+    --primary-200:#F3BAD6;
+    --primary-300:#E0E2E5;
+    --accent-100:#f5be0b;
+    --accent-200:#fef1c7;
+    --text-100:#292524;
+    --text-200:#78716c;
+    --bg-100:#FCEEF5;
+    --bg-200:#ffffff;
+    --bg-300:#FAD9E6;
+      
+}
+
+.login-booking {
+    background: linear-gradient(rgba(57, 33, 0, 0.3), rgba(49, 19, 122, .4)), url(../img/booking.png);
+    
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login-text-white{
+    color: #fff !important;
+    direction: rtl;
+    text-align: right;
+    margin-right: 63px;
+}
+
+.form-text-white{
+    color: #fff !important;
+    direction: rtl;
+    text-align: right;
+    margin-right: 15px;
+    margin-top: 20px;
+}
+
+.login-bg-dark {
+    background-color: #d63384 !important;
+}
+.login-color{
+    color: #d63384 !important;
+}
+.login-border-primary{
+    border-color: #d63384 !important;
+}
+
+
+.general_fushia-border{
+    border: #d633844b solid 1px;
+}
+
+.general-text-align-justify{
+    text-align: justify;
+}
+.login-bg-transparent {
+    background-color: rgb(215, 51, 133,.2) !important;
+}
+
+.login-hidden-copy{
+    color: #d63384;
+}
+
+.login-hidden-copy a:link {
+    color: #d63384;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.general-white-color
+{
+    color: white;
+}
+
+.login-hidden-copy a:visited {
+    color: #d63384;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.login-hidden-copy a:hover {
+    color: #d63384;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.login-hidden-copy a:active {
+    color: #d63384;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.menu-image-100x100{
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+}
+
+.general-arabic-paragraph{
+    direction: rtl;
+    text-align: right;
+}
+
+.general-py-2{
+    padding: 0.1rem !important;
+}

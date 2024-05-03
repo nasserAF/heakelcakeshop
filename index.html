@@ -1,0 +1,909 @@
+<head>
+    <meta charset="utf-8">
+    <title>Tourist - Travel Agency HTML Template</title>
+
+
+    <!------------------------------------------------------------------------------------------------------->
+    <!--                                        main image slider                                          -->
+    <!------------------------------------------------------------------------------------------------------->
+    <link href="css/slick.css" rel="stylesheet">
+    <link href="css/slick-theme.css" rel="stylesheet">
+    <link href="css/tiny-slider.css" rel="stylesheet">
+    <!-- Libs CSS -->
+    <link href="css/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="css/feather-icons.css" rel="stylesheet">
+    <link href="css/simplebar.min.css" rel="stylesheet">
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="../css/theme.min.css">
+    <script async="" src="https://www.clarity.ms/tag/kuc8w5o9nt">
+    </script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-M8S4MT3EYG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-M8S4MT3EYG");
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] =
+                c[a] ||
+                function () {
+                    (c[a].q = c[a].q || []).push(arguments);
+                };
+            t = l.createElement(r);
+            t.async = 1;
+            t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "kuc8w5o9nt");
+    </script>
+    <!------------------------------------------------------------------------------------------------------->
+    <!--                                   end of main image slider                                        -->
+    <!------------------------------------------------------------------------------------------------------->
+
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="../img/logo.ico">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta
+        content="كيك جاهز, حلويات, دونات, تارت, تشيز كيك, سنابون, تيراميسو, كيك خاص, مناسبات, زواج, خطوبة, اعياد ميلاد, تنسيق ورود, بالونات هيليوم, إربد, الأردن"
+        name="keywords">
+
+    <meta
+        content="متجر حلويات في إربد يقدم تشكيلة واسعة من الكيك الجاهز والحلويات اللذيذة مثل دونات، تارت، تشيز كيك، سنابون، تيراميسو. كما نقوم بتحضير كيك خاص للمناسبات المختلفة مثل الزواج، الخطبة، اعياد الميلاد وغيرها. لدينا أيضاً تنسيق ورود وبالونات هيليوم لإضافة لمسة مميزة على مناسباتك. اطلب الآن واستمتع بتجربة مميزة!"
+        name="description">
+
+
+    <!-- Favicon -->
+    <!-- <link href="../img/logo.ico" rel="icon"> -->
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../generalStyles.css" rel="stylesheet">
+
+
+    <style>
+        .custom-package-item {
+            background-color: #ffedf7;
+            border: 1px solid #e5e2e4;
+        }
+
+        .custom-d-flex {
+            background-color: #ffffff;
+        }
+
+        .img100 {
+            border-radius: 120px;
+            width: 100%;
+        }
+
+        .text-with-shasow {
+            color: white;
+            text-shadow: 3px 3px 7px #d63384, 4px 4px 7px #600633;
+            direction: rtl;
+            text-align: right;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: #ffffff
+        }
+    </style>
+    
+</head>
+
+<body>
+    
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navigation Bar Section -->
+    <div id="injected-navbar"></div>
+
+
+
+
+    <main>
+        <section class="mt-8">
+            <div class="container">
+                <div class="hero-slider">
+                    <div style="background: url(../img/main/slider-2.jpg) no-repeat; background-size: cover; border-radius: 0.5rem; background-position: right">
+                        <div class="ps-lg-12 py-lg-16 col-xxl-5 col-md-7 py-14 px-8 text-xs-center text-with-shasow">
+                            <h2 class="display-5 fw-bold mt-4" style="direction: rtl;text-align: right;">هيك الكيك ،،،
+                                شكل وطعم</h2>
+                            <!-- <p class="lead" style="direction: rtl;text-align: right;">اشهى واطيب الكيكات ولجميع مناسباتكم عيد ميلاد، خطوبه، عرس، توديع عزوبية وأكثر ...</p> -->
+                        </div>
+                    </div>
+                    <div
+                        style="background: url(../img/main/slide-1.jpg) no-repeat; background-size: cover; border-radius: 0.5rem; background-position: right">
+                        <div class="ps-lg-12 py-lg-16 col-xxl-5 col-md-7 py-14 px-8 text-xs-center text-with-shasow">
+                            <h2 class="display-5 fw-bold mt-4" style="direction: rtl;text-align: right;">هيك الكيك ،،،
+                                شكل وطعم</h2>
+                            <!--  <p class="lead" style="direction: rtl;text-align: right;">اشهى واطيب الكيكات ولجميع مناسباتكم عيد ميلاد، خطوبه، عرس، توديع عزوبية وأكثر ...</p> -->
+                        </div>
+                    </div>
+                    <div
+                        style="background: url(../img/main/slider-3.jpg) no-repeat; background-size: cover; border-radius: 0.5rem; background-position: left">
+                        <div class="ps-lg-12 py-lg-16 col-xxl-5 col-md-7 py-14 px-8 text-xs-center text-with-shasow">
+                            <h2 class="display-5 fw-bold mt-4" style="direction: rtl;text-align: right;">هيك الكيك ،،،
+                                شكل وطعم</h2>
+                            <!--  <p class="lead" style="direction: rtl;text-align: right;">اشهى واطيب الكيكات ولجميع مناسباتكم عيد ميلاد، خطوبه، عرس، توديع عزوبية وأكثر ...</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+        <section class="mb-lg-10 mt-lg-14 my-8">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 mb-6">
+                        <h3 class="mb-0"></h3>
+                    </div>
+                </div>
+                <div class="category-slider">
+                    <div class="item">
+                        <a href="../pages/shop-grid.html" class="text-decoration-none text-inherit">
+                            <div class="card card-product mb-lg-4">
+                                <div class="card-body text-center py-8">
+                                    <img src="../img/main/category-dairy-bread-eggs.jpg" alt="Grocery Ecommerce Template"
+                                        class="mb-3 img-fluid">
+                                    <div class="text-truncate"><strong>تارت</strong></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="../pages/shop-grid.html" class="text-decoration-none text-inherit">
+                            <div class="card card-product mb-lg-4">
+                                <div class="card-body text-center py-8">
+                                    <img src="../img/main/category-snack-munchies.jpg" alt="Grocery Ecommerce Template"
+                                        class="mb-3 img100">
+                                    <div class="text-truncate"><strong>سينابون</strong></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="../pages/shop-grid.html" class="text-decoration-none text-inherit">
+                            <div class="card card-product mb-lg-4">
+                                <div class="card-body text-center py-8">
+                                    <img src="../img/main/category-bakery-biscuits.jpg" alt="Grocery Ecommerce Template"
+                                        class="mb-3 img100">
+                                    <div class="text-truncate"><strong>ستروبيري تشيز كيك</strong></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="../pages/shop-grid.html" class="text-decoration-none text-inherit">
+                            <div class="card card-product mb-lg-4">
+                                <div class="card-body text-center py-8">
+                                    <img src="../img/main/category-instant-food.jpg" alt="Grocery Ecommerce Template"
+                                        class="mb-3 img100">
+                                    <div class="text-truncate"><strong>ستروبيري تشيز كيك</strong></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="../pages/shop-grid.html" class="text-decoration-none text-inherit">
+                            <div class="card card-product mb-lg-4">
+                                <div class="card-body text-center py-8">
+                                    <img src="../img/main/category-tea-coffee-drinks.jpg" alt="Grocery Ecommerce Template"
+                                        class="mb-3 img100">
+                                    <div class="text-truncate"><strong>لوتس تشيز كيك</strong></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="../pages/shop-grid.html" class="text-decoration-none text-inherit">
+                            <div class="card card-product mb-lg-4">
+                                <div class="card-body text-center py-8">
+                                    <img src="../img/main/category-atta-rice-dal.jpg" alt="Grocery Ecommerce Template"
+                                        class="mb-3 img100">
+                                    <div class="text-truncate"><strong>شوكولا كيك</strong></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="item">
+                        <a href="../pages/shop-grid.html" class="text-decoration-none text-inherit">
+                            <div class="card card-product mb-lg-4">
+                                <div class="card-body text-center py-8">
+                                    <img src="../img/main/category-baby-care.jpg" alt="Grocery Ecommerce Template"
+                                        class="mb-3 img100">
+                                    <div class="text-truncate"><strong>ستروبيري تشيز كيك</strong></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="../pages/shop-grid.html" class="text-decoration-none text-inherit">
+                            <div class="card card-product mb-lg-4">
+                                <div class="card-body text-center py-8">
+                                    <img src="../img/main/category-chicken-meat-fish.jpg" alt="Grocery Ecommerce Template"
+                                        class="mb-3 img100">
+                                    <div class="text-truncate"><strong>كوكيز</strong></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="../pages/shop-grid.html" class="text-decoration-none text-inherit">
+                            <div class="card card-product mb-lg-4">
+                                <div class="card-body text-center py-8">
+                                    <img src="../img/main/category-cleaning-essentials.jpg" alt="Grocery Ecommerce Template"
+                                        class="mb-3 img100">
+                                    <div class="text-truncate"><strong>بيبي دوناتس</strong></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="../pages/shop-grid.html" class="text-decoration-none text-inherit">
+                            <div class="card card-product mb-lg-4">
+                                <div class="card-body text-center py-8">
+                                    <img src="../img/main/category-pet-care.jpg" alt="Grocery Ecommerce Template"
+                                        class="mb-3 img100">
+                                    <div class="text-truncate"><strong>دوناتس</strong></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+    <script src="js/validation.js"></script>
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src="img/about.jpg" alt=""
+                            style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <p style="font-size: 16px;font-weight: bold;direction: rtl;text-align: justify;">انغمس في عالم من الحلويات الفاخرة في متجرنا المتميز، حيث تتلاقى الحرفية والإبداع لتقديم تجربة لا تُضاهى لعشاق الكيك والحلويات. نحن نختص في تحضير كيكات الكريمة والفوندان بلمسة فنية، حيث نصمم كل كيكة بعناية فائقة لتناسب ذوقك الرفيع ومناسبتك الخاصة. تذوق أروع النكهات واستمتع بالزينة الساحرة التي تجعل من كل كيكة تحفة فنية.</p>
+                    <p style="font-size: 16px;font-weight: bold;direction: rtl;text-align: justify;">لا يقتصر إبداعنا على الكيك، بل نقدم لك مجموعة متنوعة من الحلويات الشهية التي ترضي جميع الأذواق. استمتع بتشكيلة واسعة من التشيز كيك بمختلف النكهات، والكوكيز المقرمشة، والتيراميسو الإيطالي الأصيل، والكب كيك الملونة، والدوناتس الشهية، والديسباسيتو الفريد، والتارت الفرنسية الكلاسيكية، وقطع الكيك المنعشة، وكاسات الكيك الأنيقة. كل قطعة حلوى لدينا مصنوعة من مكونات طازجة ومختارة بعناية لنضمن لك تجربة تذوق لا تُنسى.</p>
+                    <p style="font-size: 16px;font-weight: bold;direction: rtl;text-align: justify;">ولإضافة لمسة من الأناقة والرقي، نقدم لك قوالب الشوكولاتة المصنوعة يدوياً بأشكال ونكهات متنوعة تناسب جميع المناسبات. اختر من بين تشكيلتنا الواسعة من الشوكولاتة الداكنة والحليب والشوكولاتة البيضاء لتضفي لمسة من السحر على حفلتك.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Destination Start -->
+    <div class="container-xxl py-5 destination">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <!-- <h6 class="section-title bg-white text-center text-primary px-3">Destination</h6>
+                    <h1 class="mb-5">Popular Destination</h1> -->
+            </div>
+            <div class="row g-3">
+                <div class="col-lg-7 col-md-6">
+                    <div class="row g-3">
+                        <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
+                            <a class="position-relative d-block overflow-hidden" href="">
+                                <img class="img-fluid" src="img/destination-1.jpg" alt="">
+                                <div class="text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2"></div>
+                                <div class="text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2"> </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
+                            <a class="position-relative d-block overflow-hidden" href="">
+                                <img class="img-fluid" src="img/destination-2.jpg" alt="">
+                                <div class="text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2"></div>
+                                <div class="text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2"> </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
+                            <a class="position-relative d-block overflow-hidden" href="">
+                                <img class="img-fluid" src="img/destination-3.jpg" alt="">
+                                <div class="text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2"></div>
+                                <div class="text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2"> </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s">
+                    <a class="position-relative d-block h-100 overflow-hidden" href="">
+                        <img class="img-fluid position-absolute w-100 h-100" src="img/destination-4.jpg" alt=""
+                            style="object-fit: cover;">
+                        <div class="text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2"></div>
+                        <div class="text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2"> </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Destination Start -->
+
+
+
+
+
+
+<!-- About Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5" style="direction: rtl;">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                <div class="position-relative h-100">
+                    <img class="img-fluid position-absolute w-100 h-100" src="img/about4.jpg" alt=""
+                        style="object-fit: cover;">
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                <p style="font-size: 16px;font-weight: bold;direction: rtl;text-align: justify;">كما نقدم لك مجموعة من الإضافات التي تكمل حفلتك وتجعلها لا تُنسى. اختر من بين تشكيلة واسعة من شموع أعياد الميلاد بأشكال وألوان وأحجام مختلفة لتضفي جوًا من البهجة والاحتفال. أضف لمسة من الفخامة مع ثيمات الكيك (cake toppers) بتصاميم وألوان تناسب جميع المناسبات. ولإضفاء جو من الدفء والرومانسية، نقدم لك شموع معطرة مصممة بشكل كيك أو كب كيك بعبيرها الفواح.</p>
+                <p style="font-size: 16px;font-weight: bold;direction: rtl;text-align: justify;">ولا تكتمل الاحتفالات بدون البالونات، لذلك نوفر لك بالونات الهيليوم وبالونات الهواء العادية، بالإضافة إلى بالونات على شكل أرقام وحروف وحيوانات لتضفي لمسة من المرح والبهجة على حفلتك.</p>
+                <p style="font-size: 16px;font-weight: bold;direction: rtl;text-align: justify;">وبعد اختيارك للحلويات، استرخ واستمتع بمشروبك الساخن المفضل من بين تشكيلتنا التي تشمل القهوة التركية الغنية، والقهوة الأمريكية الكلاسيكية، والنسكافيه السريع، والنيسبريسو الفاخر.</p>
+                <p style="font-size: 16px;font-weight: bold;direction: rtl;text-align: justify;">في متجرنا، نحرص على تقديم تجربة تسوق فريدة وخدمة عملاء استثنائية. نحن ملتزمون بتحقيق رؤيتك للحفلة المثالية وتجاوز توقعاتك.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Team Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <!-- <h6 class="section-title bg-white text-center text-primary px-3">Travel Guide</h6> -->
+                <h1 class="mb-5">تابعونا على وسائل التواصل</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="../img/heakelcakeSocialPages/team-2.jpg" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <a class="btn btn-square mx-1" href="https://web.facebook.com/heak.elcake/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a> -->
+                        </div>
+                        <div class="text-center p-4" style="font-size: 0.9rem;">
+                            <h5 class="mb-0">فيسبوك</h5>
+                            <strong>heak.elcake</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="../img/heakelcakeSocialPages/team-1.jpg" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a> -->
+                            <a class="btn btn-square mx-1" href="https://www.instagram.com/heak_elcake/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="text-center p-4" style="font-size: 0.9rem;">
+                            <h5 class="mb-0">انستقرام</h5>
+                            <strong>heak_elcake هيك الكيك</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="../img/heakelcakeSocialPages/team-3.jpg" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a> -->
+                            <a class="btn btn-square mx-1" href="https://www.youtube.com/@heak_elcake2052" target="_blank"><i class="fab fa-youtube"></i></a>
+                        </div>
+                        <div class="text-center p-4" style="font-size: 0.9rem;">
+                            <h5 class="mb-0">يوتيوب</h5>
+                            <strong>heak_elcake</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="../img/heakelcakeSocialPages/team-4.jpg" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <!-- <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a> -->
+                            <a class="btn btn-square mx-1" href="https://web.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                        <div class="text-center p-4" style="font-size: 0.9rem;">
+                            <h5 class="mb-0">واتس آب</h5>
+                            <strong>0795860932</strong>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="../img/team-3.jpg" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Full Name</h5>
+                            <small>Designation</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="../img/team-4.jpg" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Full Name</h5>
+                            <small>Designation</small>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Testimonial Start -->
+    <!-- <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="text-center">
+                <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
+                <h1 class="mb-5">اراء عملائنا</h1>
+            </div>
+            <div id="testimonial-carousel" class="owl-carousel testimonial-carousel position-relative">
+               
+            </div>
+        </div>
+    </div> -->
+    <!-- Testimonial End -->
+
+
+
+    <!-- -------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- <div class="container-fluid py-5">
+        <div class="container py-5">
+          <div class="text-center mb-3 pb-3">
+            <h1>آراء زبائننا جافا سكربت</h1>
+          </div>
+          <div class="owl-carousel testimonial-carousel">
+            
+          </div>
+        </div>
+      </div>
+ -->
+
+
+
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center mb-3 pb-3">
+                <h1>اراء زبائننا ثابت</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel">
+                <div class="text-center pb-4">
+                    <img class="img-fluid mx-auto" src="../img/testimonial/testimonial009.jpg"
+                        style="width: 100px; height: 100px;border-radius: 10px;">
+                    <div class="testimonial-text bg-white p-4 mt-n5" style="border-radius: 30px;direction: rtl;">
+                        <strong>
+                            <p class="mt-5">سويت عيد ميلاد بنتي وعملتلهم كيكة من عند هيك الكيك. الصراحة فنانين، الكيكة كانت تحفة و شكلها يجنن، الكل سألني من وين جبتها.</p>
+                        </strong>
+                        <h5 class="text-truncate">سجى الدين الزعبي</h5>
+                        <span>طالبة بجامعة اليرموك</span>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img class="img-fluid mx-auto" src="../img/testimonial/testimonial001.jpg"
+                        style="width: 100px; height: 100px;border-radius: 10px;">
+                    <div class="testimonial-text bg-white p-4 mt-n5" style="border-radius: 30px;direction: rtl;">
+                        <strong>
+                            <p class="mt-5">يا جماعة، والله هيك الكيك ما الها مثيل! الدوناتس عندهم بتجنن، طرية ولذيذة. لازم تجربوها!</p>
+                        </strong>
+                        <h5 class="text-truncate">مريم نور شرارة</h5>
+                        <span>اربد - الحي الشرقي</span>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img class="img-fluid mx-auto" src="../img/testimonial/testimonial003.jpg"
+                        style="width: 100px; height: 100px;border-radius: 10px;">
+                    <div class="testimonial-text bg-white p-4 mt-n5" style="border-radius: 30px;direction: rtl;">
+                        <strong>
+                            <p class="mt-5">أحلى تشيز كيك أكلته بحياتي كان من هيك الكيك. قوامها كريمي وطعمها ولا أروع. ما رح تندمو!</p>
+                        </strong>
+                        <h5 class="text-truncate">تالا حسين بني هاني</h5>
+                        <span>اربد - حي الراهبات</span>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img class="img-fluid mx-auto" src="../img/testimonial/testimonial004.jpg"
+                        style="width: 100px; height: 100px;border-radius: 10px;">
+                    <div class="testimonial-text bg-white p-4 mt-n5" style="border-radius: 30px;direction: rtl;">
+                        <strong>
+                            <p class="mt-5">هيك الكيك صاروا محلي المفضل للحلويات. عندهم كل شي بتشتهيه النفس، و أسعارهم كتير منيحة.</p>
+                            </stron>
+                            <h5 class="text-truncate">لمى عبدالله الرفاعي</h5>
+                            <span>جامعة العلوم والتكنولوجيا</span>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img class="img-fluid mx-auto" src="../img/testimonial/testimonial007.jpg"
+                        style="width: 100px; height: 100px;border-radius: 10px;">
+                    <div class="testimonial-text bg-white p-4 mt-n5" style="border-radius: 30px;direction: rtl;">
+                        <strong>
+                            <p class="mt-5">هيك الكيك صاروا محلي المفضل للحلويات. عندهم كل شي بتشتهيه النفس، و أسعارهم كتير منيحة.</p>
+                            </stron>
+                            <h5 class="text-truncate">لمى عبدالله الرفاعي</h5>
+                            <span>جامعة العلوم والتكنولوجيا</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="injected-footer"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+   
+    
+
+
+
+    <!-- Back to Top -->
+    <!-- <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a> -->
+
+    <!-- Scrpt to inject the navigation bar -->
+    <script>
+        const navbarDiv = document.getElementById('injected-navbar');
+        const footerDiv = document.getElementById('injected-footer');
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(html => {
+                navbarDiv.innerHTML = html;
+
+                // Load style2.css dynamically 
+                /* const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = 'style2.css';
+                document.head.appendChild(link);  */
+            })
+            .catch(error => console.error('Error fetching content:', error));
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(html => {
+                footerDiv.innerHTML = html;
+
+                // Load style2.css dynamically 
+                /* const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = 'style2.css';
+                document.head.appendChild(link);  */
+            })
+            .catch(error => console.error('Error fetching content:', error));
+    </script>
+
+    
+
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+
+
+
+    
+
+
+
+
+
+
+
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+
+
+
+
+
+
+  
+
+    
+
+
+
+
+
+    <!-- Footer Gallery script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('../socialGallery.json')
+                .then(response => response.json())
+                .then(imagesData => {
+                    const galleryContainer = document.getElementById('social-gallery');
+                    console.log("galleryContainer :", galleryContainer); // Check if the script is running
+
+                    for (const key in imagesData) {
+                        const imageGroup = imagesData[key];
+                        const randomImageIndex = Math.floor(Math.random() * imageGroup.length);
+                        const randomImageURL = imageGroup[randomImageIndex];
+
+                        console.log("Random Image URL:", randomImageURL); // Verify image URL
+
+                        const imageElement = document.createElement('div');
+                        imageElement.classList.add('col-3');
+                        imageElement.innerHTML = `<img src="${randomImageURL}" class="img-fluid rounded-circle border general-white-color p-2" alt="" width="135px">`;
+                        galleryContainer.appendChild(imageElement);
+                    }
+                })
+                .catch(error => console.error('Error fetching JSON:', error));
+        });
+
+    </script>
+
+
+
+
+
+
+
+
+    <!-- <script src="js/bootstrap.bundle.min.js"></script> -->
+    <script src="js/simplebar.min.js"></script>
+
+    <!-- Theme JS -->
+    <script src="js/theme.min.js"></script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/slick-slider.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/tns-slider.js"></script>
+    <script src="js/zoom.js"></script>
+
+
+
+<script>
+    /* $(document).ready(function() {
+      // Fetch testimonials from JSON file
+      $.getJSON("../Testimonial.json", function(data) {
+        // Loop through each testimonial and create HTML
+        $.each(data, function(index, testimonial) {
+          var testimonialHTML = `
+            <div class="text-center pb-4">
+              <img class="img-fluid mx-auto" src="${testimonial.image}" style="width: 100px; height: 100px; border-radius: 10px;">
+              <div class="testimonial-text bg-white p-4 mt-n5" style="border-radius: 30px; direction: rtl;">
+                <strong>
+                  <p class="mt-5">${testimonial.quote}</p>
+                </strong>
+                <h5 class="text-truncate">${testimonial.name}</h5>
+                <span>${testimonial.location}</span>
+              </div>
+            </div>
+          `;
+          // Append the HTML to the carousel
+          $(".testimonial-carousel").append(testimonialHTML);
+        });
+
+        // Initialize Owl Carousel
+        $('.testimonial-carousel').owlCarousel({
+          loop: true,
+          margin: 10,
+          nav: false,
+          dots: true,
+          responsive: {
+            0: {
+              items: 1
+            },
+            600: {
+              items: 2
+            },
+            1000: {
+              items: 3
+            }
+          }
+        });
+      });
+    }); */
+  </script>
+
+    
+<script>
+    const testimonialCarousel = document.getElementById('testimonial-carousel');
+
+fetch('Testimonial.json')
+  .then(response => response.json())
+  .then(testimonials => {
+    testimonials.forEach(testimonial => {
+      const item = document.createElement('div');
+      item.classList.add('testimonial-item', 'bg-white', 'text-center', 'border', 'p-4');
+
+      const img = document.createElement('img');
+      img.src = testimonial.image;
+      img.classList.add('bg-white', 'rounded-circle', 'shadow', 'p-1', 'mx-auto', 'mb-3');
+      img.style.width = '80px';
+      img.style.height = '80px';
+      item.appendChild(img);
+
+      const name = document.createElement('h5');
+      name.textContent = testimonial.name;
+      name.classList.add('mb-0');
+      item.appendChild(name);
+
+      const location = document.createElement('p');
+      location.textContent = testimonial.location;
+      item.appendChild(location);
+
+      const quote = document.createElement('p');
+      quote.textContent = testimonial.quote;
+      quote.classList.add('mt-2', 'mb-0', 'login-color');
+      item.appendChild(quote);
+
+      testimonialCarousel.appendChild(item);
+    });
+
+
+    $('.owl-carousel').owlCarousel({
+
+    });
+  });
+</script>
+
+<yt-formatted-string id="video-title" class="style-scope ytd-rich-grid-media" aria-label="الأستاذ بسّام جرّار- تفسير-&quot; ليقضي الله أمرا كان مفعولا&quot;--- 27- 4- 2024م by Islam noon 8,487 views 6 hours ago 1 hour, 10 minutes">الأستاذ بسّام جرّار- تفسير-" ليقضي الله أمرا كان مفعولا"--- 27- 4- 2024م</yt-formatted-string>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
