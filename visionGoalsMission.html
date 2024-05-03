@@ -140,7 +140,7 @@
     <script>
         const navbarDiv = document.getElementById('injected-navbar');
         const footerDiv = document.getElementById('injected-footer');
-        fetch('/navbar.html')
+        fetch('navbar.html')
             .then(response => response.text())
             .then(html => {
                 navbarDiv.innerHTML = html;
