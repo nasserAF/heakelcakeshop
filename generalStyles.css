@@ -1,8 +1,8 @@
 @font-face {
     font-family: "jazeera-light"; /* Name your font */
-    src: /* url("../fonts/jazeera-light.woff2") format("woff2"), */
-         /* url("../fonts/jazeera-light.woff") format("woff"), */
-         url("../fonts/jazeera-light.ttf") format("truetype");
+    src: /* url("fonts/jazeera-light.woff2") format("woff2"), */
+         /* url("fonts/jazeera-light.woff") format("woff"), */
+         url("fonts/jazeera-light.ttf") format("truetype");
     font-weight: normal; /* Adjust weight as needed */
     font-style: normal;  /* Adjust style as needed */
   }
@@ -26,7 +26,7 @@
 }
 
 .login-booking {
-    background: linear-gradient(rgba(57, 33, 0, 0.3), rgba(49, 19, 122, .4)), url(../img/booking.png);
+    background: linear-gradient(rgba(57, 33, 0, 0.3), rgba(49, 19, 122, .4)), url(img/booking.png);
     
     background-position: center center;
     background-repeat: no-repeat;
