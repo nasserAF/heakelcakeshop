@@ -1,10 +1,11 @@
-<html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 
 <head>
     <base href="https://websim.creation.engine/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sitemap URL Extractor and Page Analyzer</title>
+    <title>محلل خريطة الموقع وتحليل الصفحات</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
 
@@ -32,9 +33,7 @@
             text-align: center;
         }
 
-        h1,
-        h2,
-        h3 {
+        h1, h2, h3 {
             margin: 0;
             padding: 10px 0;
         }
@@ -114,11 +113,9 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 10px;
-
         }
 
-        th,
-        td {
+        th, td {
             border: 1px solid #ddd;
             padding: 12px;
             text-align: right;
@@ -162,8 +159,6 @@
             vertical-align: top;
         }
 
-
-
         #chart-container {
             width: 100%;
             height: 600px;
@@ -174,7 +169,7 @@
 <body>
     <header>
         <div class="container">
-            <h1>أداة استخراج وتحليل خريطة الموقع</h1>
+            <h1>محلل خريطة الموقع وتحليل الصفحات</h1>
         </div>
     </header>
 
@@ -232,16 +227,14 @@
                 <h3>القسم 3: نص الصفحة</h3>
                 <div id="console-window"></div>
             </div>
-
         </div>
         <div class="section">
-            <h1>تحليل تكرار الكلمات المفتاحية</h1>
+            <h3>تحليل تكرار الكلمات المفتاحية</h3>
             <div id="chart-container">
                 <canvas id="keywordChart"></canvas>
             </div>
         </div>
     </div>
-
 
     <script>
         const sitemapInput = document.getElementById('sitemap-url');
@@ -250,88 +243,92 @@
         const status = document.getElementById('status');
         const pageAnalysis = document.getElementById('page-analysis');
 
+        window.keywordChart = null;
+
         extractBtn.addEventListener('click', extractUrls);
 
         async function extractUrls() {
-    const sitemapUrl = sitemapInput.value.trim();
-    if (!sitemapUrl) {
-        status.textContent = 'الرجاء إدخال رابط صالح لـ sitemap.xml';
-        return;
-    }
-
-    status.textContent = 'جاري جلب خريطة الموقع...';
-    urlList.innerHTML = '';
-    pageAnalysis.style.display = 'none';
-
-    const corsProxies = [
-        'https://api.allorigins.win/raw?url=',
-        'https://yacdn.org/proxy/',
-        'https://cors-anywhere.herokuapp.com/'
-    ];
-
-    for (let proxy of corsProxies) {
-        try {
-            const response = await fetch(proxy + encodeURIComponent(sitemapUrl), {
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest'
-                }
-            });
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-
-            const xmlText = await response.text();
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
-            const urls = xmlDoc.getElementsByTagName('loc');
-
-            if (urls.length === 0) {
-                status.textContent = 'لم يتم العثور على روابط في خريطة الموقع.';
+            const sitemapUrl = sitemapInput.value.trim();
+            if (!sitemapUrl) {
+                status.textContent = 'الرجاء إدخال رابط صالح لـ sitemap.xml';
                 return;
             }
 
-            status.textContent = `تم استخراج ${urls.length} رابط:`;
+            status.textContent = 'جاري جلب خريطة الموقع...';
+            urlList.innerHTML = '';
+            pageAnalysis.style.display = 'none';
 
-            for (let url of urls) {
-                const li = document.createElement('li');
-                const a = document.createElement('a');
-                a.href = url.textContent;
-                a.textContent = url.textContent;
-                a.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    analyzePage(url.textContent);
-                });
-                li.appendChild(a);
-                urlList.appendChild(li);
+            const corsProxies = [
+                'https://api.allorigins.win/raw?url=',
+                'https://yacdn.org/proxy/',
+                'https://cors-anywhere.herokuapp.com/'
+            ];
+
+            for (let proxy of corsProxies) {
+                try {
+                    const response = await fetch(proxy + encodeURIComponent(sitemapUrl), {
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`خطأ في HTTP! الحالة: ${response.status}`);
+                    }
+
+                    const xmlText = await response.text();
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+                    const urls = xmlDoc.getElementsByTagName('loc');
+
+                    if (urls.length === 0) {
+                        status.textContent = 'لم يتم العثور على روابط في خريطة الموقع.';
+                        return;
+                    }
+
+                    status.textContent = `تم استخراج ${urls.length} رابط:`;
+
+                    for (let url of urls) {
+                        const li = document.createElement('li');
+                        const a = document.createElement('a');
+                        a.href = url.textContent;
+                        a.textContent = url.textContent;
+                        a.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            analyzePage(url.textContent);
+                        });
+                        li.appendChild(a);
+                        urlList.appendChild(li);
+                    }
+
+                    // If we reach here, we've successfully fetched and parsed the sitemap
+                    return;
+
+                } catch (error) {
+                    console.error(`خطأ مع البروكسي ${proxy}:`, error);
+                    // If this is the last proxy in the list, show an error message
+                    if (proxy === corsProxies[corsProxies.length - 1]) {
+                        status.textContent = `فشلت جميع محاولات جلب خريطة الموقع. آخر خطأ: ${error.message}`;
+                    }
+                    // Otherwise, continue to the next proxy
+                }
             }
-
-            // If we reach here, we've successfully fetched and parsed the sitemap
-            return;
-
-        } catch (error) {
-            console.error(`Error with proxy ${proxy}:`, error);
-            // If this is the last proxy in the list, show an error message
-            if (proxy === corsProxies[corsProxies.length - 1]) {
-                status.textContent = `فشلت جميع محاولات جلب خريطة الموقع. آخر خطأ: ${error.message}`;
-            }
-            // Otherwise, continue to the next proxy
         }
-    }
-}
 
         async function analyzePage(url) {
             status.textContent = 'جاري تحليل الصفحة...';
             pageAnalysis.style.display = 'none';
 
             try {
-                const response = await fetch(url);
+                const corsProxy = 'https://api.allorigins.win/raw?url=';
+                const response = await fetch(corsProxy + encodeURIComponent(url));
                 if (!response.ok) {
                     throw new Error(`خطأ في HTTP! الحالة: ${response.status}`);
                 }
-                const htmlText = await response.text();
+                const html = await response.text();
+
                 const parser = new DOMParser();
-                const doc = parser.parseFromString(htmlText, 'text/html');
+                const doc = parser.parseFromString(html, 'text/html');
 
                 // عنوان الصفحة
                 document.getElementById('page-title').textContent = doc.title;
@@ -410,7 +407,7 @@
                     row.insertCell().textContent = 'جاري التحميل...';
                 });
 
-                // القسم 3: نص الصفحة (استخراج العناوين والفقرات فقط، إزالة السطور الفارغة)
+                // القسم 3: نص الصفحة
                 const consoleWindow = document.getElementById('console-window');
                 const headingsAndParagraphs = doc.body.querySelectorAll('h1, h2, h3, h4, h5, h6, p');
                 let extractedText = '';
@@ -421,77 +418,19 @@
                 });
                 consoleWindow.innerHTML = extractedText;
 
-                pageAnalysis.style.display = 'block';
-                status.textContent = 'اكتمل تحليل الصفحة';
+                // تحليل تكرار الكلمات المفتاحية
+                const textContent = Array.from(doc.body.querySelectorAll('p, h1, h2, h3, h4, h5, h6'))
+                    .map(el => el.textContent)
+                    .join(' ');
 
-                // Scroll to the page analysis section smoothly
-                pageAnalysis.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-                // Add a highlight effect to the "تحليل الصفحة" heading
-                const analysisHeading = pageAnalysis.querySelector('h2');
-                analysisHeading.style.transition = 'background-color 0.5s ease';
-                analysisHeading.style.backgroundColor = '#ffeb3b';
-                setTimeout(() => {
-                    analysisHeading.style.backgroundColor = 'transparent';
-                }, 1500);
-            } catch (error) {
-                console.error('خطأ في تحليل الصفحة:', error);
-                status.textContent = 'خطأ في تحليل الصفحة. يرجى التحقق من الرابط والمحاولة مرة أخرى.';
-            }
-
-
-
-            
-
-            /*       Keyword Frequency Analyzer      */
-            try {
-                const response = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`);
-                const html = await response.text();
-
-                // Create a temporary element to parse the HTML
-                const tempElement = document.createElement('div');
-                tempElement.innerHTML = html;
-
-                // Extract text content from specific tags
-                const elementsToExtract = tempElement.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li, span, div');
-                let textContent = '';
-                elementsToExtract.forEach(element => {
-                    textContent += element.textContent + ' ';
-                });
-
-                // Extract text from alt attributes of img tags
-                const imgElements = tempElement.querySelectorAll('img[alt]');
-                imgElements.forEach(img => {
-                    textContent += img.alt + ' ';
-                });
-
-                // Extract text from other attributes (e.g., title, aria-label)
-                const attributeElements = tempElement.querySelectorAll('[title], [aria-label]');
-                attributeElements.forEach(element => {
-                    if (element.title) {
-                        textContent += element.title + ' ';
-                    }
-                    if (element.getAttribute('aria-label')) {
-                        textContent += element.getAttribute('aria-label') + ' ';
-                    }
-                });
-
-                // Extract keywords from <meta name="keywords">
-                const metaKeywords = tempElement.querySelector('meta[name="keywords"]');
+                const metaKeywords = doc.querySelector('meta[name="keywords"]');
                 const keywords = metaKeywords ? metaKeywords.content.split(',').map(keyword => keyword.trim().toLowerCase()) : [];
 
                 if (keywords.length === 0) {
-                    console.error('No keywords found in <meta name="keywords">');
-                    return;
+                    console.warn('لم يتم العثور على كلمات مفتاحية في الصفحة');
                 }
 
-                console.log('Keywords:', keywords);
-
-                // Extract words and filter out non-Arabic words
                 const words = textContent.toLowerCase().match(/[\u0600-\u06FF]+/g);
-                console.log('Words:', words);
-
-                // Count keyword frequency
                 const keywordFrequency = {};
                 words.forEach(word => {
                     if (keywords.includes(word)) {
@@ -499,25 +438,20 @@
                     }
                 });
 
-                console.log('Keyword Frequency:', keywordFrequency);
-
-                if (Object.keys(keywordFrequency).length === 0) {
-                    console.error('No matching keywords found in the text content.');
-                    return;
-                }
-
-                // Sort keywords by frequency
                 const sortedKeywords = Object.entries(keywordFrequency)
                     .sort((a, b) => b[1] - a[1])
                     .slice(0, 20);
 
-                // Prepare data for Chart.js
                 const labels = sortedKeywords.map(k => k[0]);
                 const data = sortedKeywords.map(k => k[1]);
 
-                // Create chart
                 const ctx = document.getElementById('keywordChart').getContext('2d');
-                new Chart(ctx, {
+
+                if (window.keywordChart instanceof Chart) {
+                    window.keywordChart.destroy();
+                }
+
+                window.keywordChart = new Chart(ctx, {
                     type: 'bar',
                     data: {
                         labels: labels,
@@ -545,25 +479,40 @@
                                     text: 'الكلمات المفتاحية'
                                 },
                                 ticks: {
-                                    autoSkip: false // Ensures all labels are displayed
+                                    autoSkip: false
                                 }
                             }
                         },
                         plugins: {
                             legend: {
-                                display: false // Optional: hide legend if not needed
+                                display: false
                             },
                             tooltip: {
                                 mode: 'index',
                                 intersect: false
                             }
                         },
-                        maxBarThickness: 35 // Optional: Adjust to prevent bars from becoming too thick
+                        maxBarThickness: 35
                     }
                 });
+
+                pageAnalysis.style.display = 'block';
+                status.textContent = 'اكتمل تحليل الصفحة';
+
+                // التمرير إلى قسم تحليل الصفحة بسلاسة
+                pageAnalysis.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                // إضافة تأثير تسليط الضوء على عنوان "تحليل الصفحة"
+                const analysisHeading = pageAnalysis.querySelector('h2');
+                analysisHeading.style.transition = 'background-color 0.5s ease';
+                analysisHeading.style.backgroundColor = '#ffeb3b';
+                setTimeout(() => {
+                    analysisHeading.style.backgroundColor = 'transparent';
+                }, 1500);
+
             } catch (error) {
-                console.error('Error:', error);
-                document.body.innerHTML += `<p>Error: ${error.message}</p>`;
+                console.error('خطأ في تحليل الصفحة:', error);
+                status.textContent = `خطأ في تحليل الصفحة: ${error.message}`;
             }
         }
     </script>
