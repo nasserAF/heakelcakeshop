@@ -227,6 +227,21 @@
                 <h3>القسم 3: نص الصفحة</h3>
                 <div id="console-window"></div>
             </div>
+            <div class="section">
+                <h3>القسم 4: الروابط المستخرجة</h3>
+                <div style="width: 100%; overflow-x: auto;">
+                    <table id="links-table" style="width: 100%;">
+                        <thead>
+                            <tr>
+                                <th>الرابط</th>
+                                <th>النص</th>
+                                <th>الحالة</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
         </div>
         <div class="section">
             <h3>تحليل تكرار الكلمات المفتاحية</h3>
@@ -417,6 +432,44 @@
                     }
                 });
                 consoleWindow.innerHTML = extractedText;
+
+                // القسم 4: الروابط المستخرجة
+                const linksTable = document.querySelector('#links-table tbody');
+                linksTable.innerHTML = '';
+                const links = doc.querySelectorAll('a');
+                const uniqueUrls = new Set();
+                const urlStates = new Map();
+
+                links.forEach(link => {
+                    const href = link.href;
+                    const text = link.textContent.trim();
+
+                    let state = '';
+                    if (href === url) {
+                        state = 'loop';
+                    } else if (uniqueUrls.has(href)) {
+                        state = 'duplicate';
+                    } else if (href.includes('#') && href !== '#') {
+                        state = 'hashed';
+                    } else if (href.startsWith('http://')) {
+                        state = 'http';
+                    } else if (!href.startsWith('http://') && !href.startsWith('https://')) {
+                        state = 'no http';
+                    }
+
+                    uniqueUrls.add(href);
+                    urlStates.set(href, state);
+
+                    const row = linksTable.insertRow();
+                    const urlCell = row.insertCell();
+                    const urlLink = document.createElement('a');
+                    urlLink.href = href;
+                    urlLink.textContent = href;
+                    urlLink.target = '_blank';
+                    urlCell.appendChild(urlLink);
+                    row.insertCell().textContent = text;
+                    row.insertCell().textContent = state;
+                });
 
                 // تحليل تكرار الكلمات المفتاحية
                 const textContent = Array.from(doc.body.querySelectorAll('p, h1, h2, h3, h4, h5, h6'))
